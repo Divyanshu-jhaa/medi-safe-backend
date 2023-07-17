@@ -6,7 +6,7 @@ const cors = require("cors");
 const { application, response } = require("express");
 const app = express();
 dotenv.config();
-
+const PORT=process.env.PORT || 5000
 const db = mysql.createPool({
   host: process.env.DBHOST,
   user: process.env.DBUSER,
@@ -492,6 +492,6 @@ app.get("/dates",(req,res)=>{
   })
 })
 
-app.listen(3300, () => {
+app.listen(PORT, () => {
   console.log("Express Server 3300");
 });
